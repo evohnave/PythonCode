@@ -6,6 +6,8 @@ def flatten(nested_json, name='', out=None):
         Returns:
             The flattened json object if successful, None otherwise.
     """
+    if out is None:
+        out = {}
     if isinstance(nested_json, dict):
         for key in nested_json:
             out = flatten(nested_json[key], name + key + '_', out)
