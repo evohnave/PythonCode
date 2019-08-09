@@ -1,4 +1,4 @@
-def flatten(nested_json, name='', out={}):
+def flatten(nested_json, name='', out=None):
     """
         Flatten json object with nested keys into a single level.
         Args:
@@ -6,10 +6,10 @@ def flatten(nested_json, name='', out={}):
         Returns:
             The flattened json object if successful, None otherwise.
     """
-    if type(nested_json) is dict:
+    if isinstance(nested_json, dict):
         for key in nested_json:
             out = flatten(nested_json[key], name + key + '_', out)
-    elif type(nested_json) is list:
+    elif isinstance(nested_json, list):
         i = 0
         for itm in nested_json:
             out = flatten(itm, name + str(i) + '_', out)
