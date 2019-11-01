@@ -43,7 +43,7 @@ class XmlValidator:
         '''
         Performs the actual validation for the class.
 
-        Input: xml+path - the path to your xml file which will be validated
+        Input: xml_path - the path to your xml file which will be validated
 
         Output: True - valid -- or -- False - invalid
         '''
